@@ -89,8 +89,28 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         (não serão aceitos modelos que não estejam em conformidade)
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas em SQL/DDL 
-        (criação de tabelas, alterações, etc..) 
+        --CRIAÇÃO TABELAS--
+
+        CREATE TABLE PRODUTO(id_produto integer not null, nome varchar(15), preco float, primary key(id_produto))
+
+        CREATE TABLE TELEFONE(id_telefone integer not null, id_usuario integer, numero_telefone bigint, primary key (id_telefone))
+
+        CREATE TABLE USUARIO(id_usuario integer not null, nome varchar(80), cpf bigint, email varchar(100), senha varchar(15), estado varchar(2), municipio varchar(50),         tipo_logradouro varchar(10), logradouro varchar(50), numero integer, bairro varchar(30), cep integer, primary key(id_usuario))
+
+        CREATE TABLE COMPRA(id_compra integer not null, id_produto integer, id_usuario integer, data_compra date, quantidade integer, primary key(id_compra))
+        --INCLUSÃO DE CHAVES ESTRANGEIRAS--
+
+        ALTER TABLE TELEFONE ALTER COLUMN numero_telefone TYPE bigint
+        ALTER TABLE USUARIO ALTER COLUMN cpf TYPE bigint
+
+        ALTER TABLE TELEFONE
+        ADD CONSTRAINT fk_USUARIO_telefone FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+
+        ALTER TABLE COMPRA
+        ADD CONSTRAINT fk_USUARIO_id_usuario FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+
+        ALTER TABLE COMPRA
+        ADD CONSTRAINT fk_USUARIO_id_produto FOREIGN KEY (id_produto) REFERENCES PRODUTO(id_produto) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
