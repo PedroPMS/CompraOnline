@@ -13,9 +13,9 @@ Pedro Paulo Mauro e Silva: p.paulo0512@gmail.com<br>
 Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
 <br>e motivação da escolha realizada. <br>
 
-> A empresa "Devcom Projetos" visa colaborar com desenvolvimento de projetos para uma sociedade melhor. Sabendo-se dos desafios para gerenciar projetos dentro de uma empresa e visando unir as informações relativas a funcionários, departamentos e projetos em um mesmo local, ficamos motivados com o desenvolvimento deste sistema. O Sistema "Devcom" tem como objetivo gerenciar todas as informações ao desenvolvimento das atividades de projetos em diversas localidades do país. Para realizar suas operações adequadamente e empresa necessita que sistema que armazene informações relativas aos Projetos, Departamentos e Empregados, além de também armazenar dados sobre  Dependentes e Históricos de Salário dos empregados. O sistema deverá gerar um conjunto de relatórios que por sua vez atenderá os anseios da empresa em questão.
- 
+> O sistema "CompraOnline" visa ajudar pessoas a realizarem suas compras, evitando que elas saiam de casa, mantendo-as isoladas em meio à pandemia. Sabendo-se dos desafios para sair de casa e não se contaminar, e visando a proteção e comodidade dos clientes, ficamos motivados com o desenvolvimento deste sistema. O sistema em questão tem como objetivo tornar possível a compra de roupas e acessórios online. Para realizar suas operações adequadamente, o sistema armazena informações relativas ao cliente, além de também armazenar dados sobre os produtos. O sistema deverá gerar um compra que por sua vez atenderá os anseios dos clientes em questão. O objetivo inicial da empresa é oferecer produtos de vestuário ou acessórios para seus usuários de forma virtual, com objetivo de evitar aglomerações em tempos de pandemia.
 
+ 
 ### 3.MINI-MUNDO<br>
 
 Descrever o mini-mundo! (Não deve ser maior do que 30 linhas, se necessário resumir para justar) <br>
