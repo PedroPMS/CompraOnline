@@ -87,6 +87,9 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         a) inclusão do esquema lógico do banco de dados
         b) verificação de correspondencia com o modelo conceitual 
         (não serão aceitos modelos que não estejam em conformidade)
+        
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/logico.PNG?raw=true "Modelo Logico")
+
 
 ### 7	MODELO FÍSICO<br>
         --CRIAÇÃO TABELAS--
