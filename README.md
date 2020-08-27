@@ -98,6 +98,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         CREATE TABLE USUARIO(id_usuario integer not null, nome varchar(80), cpf bigint, email varchar(100), senha varchar(15), estado varchar(2), municipio varchar(50),         tipo_logradouro varchar(10), logradouro varchar(50), numero integer, bairro varchar(30), cep integer, primary key(id_usuario))
 
         CREATE TABLE COMPRA(id_compra integer not null, id_produto integer, id_usuario integer, data_compra date, quantidade integer, primary key(id_compra))
+        
         --INCLUSÃO DE CHAVES ESTRANGEIRAS--
 
         ALTER TABLE TELEFONE ALTER COLUMN numero_telefone TYPE bigint
@@ -114,11 +115,57 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
-        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
+        --DROP--
+        DROP TABLE PRODUTO CASCADE;
+
+        DROP TABLE TELEFONE CASCADE;
+
+        DROP TABLE USUARIO CASCADE;
+
+        DROP TABLE COMPRA CASCADE;
+
+        --CRIAÇÃO TABELAS--
+
+        CREATE TABLE PRODUTO(id_produto integer not null, nome varchar(15), preco float, primary key(id_produto));
+
+        CREATE TABLE TELEFONE(id_telefone integer not null, id_usuario integer, numero_telefone bigint, primary key (id_telefone));
+
+        CREATE TABLE USUARIO(id_usuario integer not null, nome varchar(80), cpf bigint, email varchar(100), senha varchar(15), estado varchar(2), municipio varchar(50),         tipo_logradouro varchar(10), logradouro varchar(50), numero integer, bairro varchar(30), cep integer, primary key(id_usuario));
+
+        CREATE TABLE COMPRA(id_compra integer not null, id_produto integer, id_usuario integer, data_compra date, quantidade integer, primary key(id_compra));
+
+        --INCLUSÃO DE CHAVES ESTRANGEIRAS--
+
+        ALTER TABLE TELEFONE ALTER COLUMN numero_telefone TYPE bigint;
+
+        ALTER TABLE USUARIO ALTER COLUMN cpf TYPE bigint;
+
+        ALTER TABLE TELEFONE
+        ADD CONSTRAINT fk_USUARIO_telefone FOREIGN KEY (id_usuario) 
+        REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+
+        ALTER TABLE COMPRA
+        ADD CONSTRAINT fk_USUARIO_id_usuario FOREIGN KEY (id_usuario) 
+        REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+
+        ALTER TABLE COMPRA
+        ADD CONSTRAINT fk_USUARIO_id_produto FOREIGN KEY (id_produto) 
+        REFERENCES PRODUTO(id_produto) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+
+        --INSERT--
+        INSERT INTO PRODUTO(id_produto, nome, preco)
+        VALUES (1, 'Macacão', 70),(2, 'Blusa', 25),(3, 'Calça', 300),(4, 'Meia', 5), (5, 'Cinto', 25), (6, 'Short', 70);
+
+        INSERT INTO USUARIO(id_usuario, nome, cpf, email, senha, estado, municipio, tipo_logradouro, logradouro, numero, bairro, cep)
+        VALUES (1, 'Amanda Ferreira', 12345,'amanda@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240),
+        (2, 'Ana Elisa Rezende', 12120, 'anaelisa@gmail.com', '123@456', 'ES','Serra','Rua','Carapebus', 105, 'Valparaiso', 29165813),
+        (3, 'Pedro Paulo Silva', 99999, 'pedro@gmail.com', '123@456', 'ES', 'Vitória', 'Rua', 'Milton Ramalho Simões', 11, 'Jardim Camburi', 29090770);
+
+        INSERT INTO TELEFONE(id_telefone, id_usuario, numero_telefone)
+        VALUES (1, 1, 985470122), (2, 2, 40028922), (3,3, 08007777000);
+
+        INSERT INTO COMPRA(id_compra, id_produto, id_usuario, data_compra, quantidade)
+        VALUES (1, 3, 1, '01-08-2020',1), (2, 4, 1, '01-08-2020', 4), (3, 6, 2, '01-08-2020',2), (4,5,2, '01-08-2020',1),(5, 4, 3, '01-08-2020', 1), (6, 3, 3, '01-08-2020', 2);
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
