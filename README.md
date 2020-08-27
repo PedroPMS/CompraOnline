@@ -66,7 +66,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
         e tuplas falsas (Aplicar os conceitos de normalização abordados).   
         
-![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/conceitual_.PNG?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/_conceitual.PNG?raw=true "Modelo Conceitual")
     
     
         
@@ -76,11 +76,21 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 Descrição dos dados 
-    [objeto]: [descrição do objeto]
+    [USUÁRIO]: [Tabela com dados do usuário do sistema]
+     Id usuário: campo que armazena a identificação do usuário
+     Nome: campo que armazena o nome do usuário do sistema
+     Cpf: campo que armazena o número de Cadastro de Pessoa Física para cada cliente do sistema
+     Email: campo que armazena o e-mail do cliente do sistema
+     Senha: campo que armazena a senha do cliente do sistema
+     Endereço (estado, município, tipo de logradouro, logradouro, numero, bairro, cep): campo que armazena informações do endereço do usuário do sistema
+     
     
+     
+     
+     
     EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+    CLIENTE: Tabela que armazena as informações relativas ao cliente
+    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.
 
 
 ### 6	MODELO LÓGICO<br>
