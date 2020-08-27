@@ -176,12 +176,18 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
     SELECT *
     FROM TELEFONE
-
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/telefone.png?raw=true "Telefone")
+    </br>
+    
     SELECT *
     FROM USUARIO
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/usuarios.png?raw=true "Usuário")
+    </br>
 
     SELECT *
     FROM COMPRA
+ ![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/compra.png?raw=true "Compra")
+    </br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
