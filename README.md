@@ -171,7 +171,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     SELECT *
     FROM PRODUTO
-    ![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/produtos.PNG?raw=true "Produtos")
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/produtos.png?raw=true "Produtos")
     </br>
 
     SELECT *
