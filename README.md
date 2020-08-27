@@ -77,20 +77,28 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 #### 5.2 Descrição dos dados 
     [USUÁRIO]: [Tabela com dados do usuário do sistema]
-     Id usuário: campo que armazena a identificação do usuário
+     Id_usuario: campo que armazena a identificação do usuário
      Nome: campo que armazena o nome do usuário do sistema
      Cpf: campo que armazena o número de Cadastro de Pessoa Física para cada cliente do sistema
      Email: campo que armazena o e-mail do cliente do sistema
      Senha: campo que armazena a senha do cliente do sistema
      Endereço (estado, município, tipo de logradouro, logradouro, numero, bairro, cep): campo que armazena informações do endereço do usuário do sistema
      
+    [Compra]: [Relacionamento entre Cliente e Produto]
+     Id_compra: campo que armazena a identificação da compra do usuário
+     Data_compra: campo que armazena a data que foi feita a compra pelo usuário
+     Quantidade: campo que armazena a quantidade de produto que o usuário comprou no sistema
+     
+    [PRODUTO]: [Tabela que armazena informações sobre os produtos da loja]
+     Id_produto: campo que armazena a identificação de cada produto vendido pela loja
+     Nome: campo que armazena o nome de cada produto vendido pela loja
+     Preco: campo que armazena o preço de cada produto vendido pela loja
     
+    [TELEFONE]: [Tabela que armazena o número de telefone do usuário do sistema]
+     Id_telefone: campo que armazena a identificação do número de telefone do usuário
+     Id_usuario: campo que armazena a identificação do usuário que possui o número
+     Numero_telefone: campo que armazena a identificação o número de telefone do usuário
      
-     
-     
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.
 
 
 ### 6	MODELO LÓGICO<br>
