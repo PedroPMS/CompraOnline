@@ -66,7 +66,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
         e tuplas falsas (Aplicar os conceitos de normalização abordados).   
         
-![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/conceitual.PNG?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/conceitual_.PNG?raw=true "Modelo Conceitual")
     
     
         
