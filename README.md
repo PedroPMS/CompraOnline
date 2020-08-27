@@ -169,7 +169,19 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
-    OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
+    SELECT *
+    FROM PRODUTO
+    ![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/produtos.png?raw=true "Produtos")
+    </br>
+
+    SELECT *
+    FROM TELEFONE
+
+    SELECT *
+    FROM USUARIO
+
+    SELECT *
+    FROM COMPRA
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
