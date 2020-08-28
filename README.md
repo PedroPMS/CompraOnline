@@ -241,11 +241,11 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         VALUES (1, 'Amanda Ferreira', 12345,'amanda@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240),
         (2, 'Ana Elisa Rezende', 12120, 'anaelisa@gmail.com', '123@456', 'ES','Serra','Rua','Carapebus', 105, 'Valparaiso', 29165813),
         (3, 'Pedro Paulo Silva', 99999, 'pedro@gmail.com', '123@456', 'ES', 'Vitória', 'Rua', 'Milton Ramalho Simões', 11, 'Jardim Camburi', 29090770),
-        (4, 'Lucia Gonçalves',78789, 'lucia@gmail.com,'123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 254, 'Araçás',29109600),
-        (5, 'Julia Clarindo',81254, 'julia@gmail.com,'123@456','ES','Cariacica','Rua', 'Emilio de Abreu', 254, 'Junqueira',29167841),
-        (6, 'Paula Abreu',96547, 'paula@gmail.com,'123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 256, 'Araçás',29109600),
-        (7, 'Joao Junqueira',79996,'joao@gmail.com, '123@456', 'ES', 'Cariacica', 'Rua', 'Nova', 98, 'Orquidea', 29456123),
-        (8, 'Viviane Reis',78452, 'viviane@gmail.com,'123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 256, 'Araçás',29109600),
+        (4, 'Lucia Gonçalves',78789, 'lucia@gmail.com','123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 254, 'Araçás',29109600),
+        (5, 'Julia Clarindo',81254, 'julia@gmail.com','123@456','ES','Cariacica','Rua', 'Emilio de Abreu', 254, 'Junqueira',29167841),
+        (6, 'Paula Abreu',96547, 'paula@gmail.com','123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 256, 'Araçás',29109600),
+        (7, 'Joao Junqueira',79996,'joao@gmail.com', '123@456', 'ES', 'Cariacica', 'Rua', 'Nova', 98, 'Orquidea', 29456123),
+        (8, 'Viviane Reis',78452, 'viviane@gmail.com','123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 256, 'Araçás',29109600),
         (9, 'Thyago B', 54687, 'thyago@gmail.com', '123@456', 'ES','Serra','Rua','Carapebus', 105, 'Valparaiso', 29165813),
         (10, 'Fernando Henrique', 32659,'fernando@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240);
 
