@@ -115,13 +115,39 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ### 7	MODELO FÍSICO<br>
         --CRIAÇÃO TABELAS--
 
-        CREATE TABLE PRODUTO(id_produto integer not null, nome varchar(15), preco float, primary key(id_produto))
+        CREATE TABLE PRODUTO(
+         id_produto integer not null, 
+         nome varchar(15), preco float, 
+         primary key(id_produto));
 
-        CREATE TABLE TELEFONE(id_telefone integer not null, id_usuario integer, numero_telefone bigint, primary key (id_telefone))
+        CREATE TABLE TELEFONE(
+         id_telefone integer not null, 
+         id_usuario integer, 
+         numero_telefone bigint, 
+         primary key (id_telefone));
 
-        CREATE TABLE USUARIO(id_usuario integer not null, nome varchar(80), cpf bigint, email varchar(100), senha varchar(15), estado varchar(2), municipio varchar(50),         tipo_logradouro varchar(10), logradouro varchar(50), numero integer, bairro varchar(30), cep integer, primary key(id_usuario))
+        CREATE TABLE USUARIO(
+         id_usuario integer not null, 
+         nome varchar(80), 
+         cpf bigint, 
+         email varchar(100), 
+         senha varchar(15), 
+         estado varchar(2), 
+         municipio varchar(50),
+         tipo_logradouro varchar(10), 
+         logradouro varchar(50), 
+         numero integer, 
+         bairro varchar(30), 
+         cep integer, 
+         primary key(id_usuario));
 
-        CREATE TABLE COMPRA(id_compra integer not null, id_produto integer, id_usuario integer, data_compra date, quantidade integer, primary key(id_compra))
+        CREATE TABLE COMPRA(
+         id_compra integer not null, 
+         id_produto integer, 
+         id_usuario integer, 
+         data_compra date, 
+         quantidade integer, 
+         primary key(id_compra));
         
         --INCLUSÃO DE CHAVES ESTRANGEIRAS--
 
@@ -150,13 +176,39 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
         --CRIAÇÃO TABELAS--
 
-        CREATE TABLE PRODUTO(id_produto integer not null, nome varchar(15), preco float, primary key(id_produto));
+        CREATE TABLE PRODUTO(
+         id_produto integer not null, 
+         nome varchar(15), preco float, 
+         primary key(id_produto));
 
-        CREATE TABLE TELEFONE(id_telefone integer not null, id_usuario integer, numero_telefone bigint, primary key (id_telefone));
+        CREATE TABLE TELEFONE(
+         id_telefone integer not null, 
+         id_usuario integer, 
+         numero_telefone bigint, 
+         primary key (id_telefone));
 
-        CREATE TABLE USUARIO(id_usuario integer not null, nome varchar(80), cpf bigint, email varchar(100), senha varchar(15), estado varchar(2), municipio varchar(50),         tipo_logradouro varchar(10), logradouro varchar(50), numero integer, bairro varchar(30), cep integer, primary key(id_usuario));
+        CREATE TABLE USUARIO(
+         id_usuario integer not null, 
+         nome varchar(80), 
+         cpf bigint, 
+         email varchar(100), 
+         senha varchar(15), 
+         estado varchar(2), 
+         municipio varchar(50),
+         tipo_logradouro varchar(10), 
+         logradouro varchar(50), 
+         numero integer, 
+         bairro varchar(30), 
+         cep integer, 
+         primary key(id_usuario));
 
-        CREATE TABLE COMPRA(id_compra integer not null, id_produto integer, id_usuario integer, data_compra date, quantidade integer, primary key(id_compra));
+        CREATE TABLE COMPRA(
+         id_compra integer not null, 
+         id_produto integer, 
+         id_usuario integer, 
+         data_compra date, 
+         quantidade integer, 
+         primary key(id_compra));
 
         --INCLUSÃO DE CHAVES ESTRANGEIRAS--
 
@@ -178,7 +230,12 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
         --INSERT--
         INSERT INTO PRODUTO(id_produto, nome, preco)
-        VALUES (1, 'Macacão', 70),(2, 'Blusa', 25),(3, 'Calça', 300),(4, 'Meia', 5), (5, 'Cinto', 25), (6, 'Short', 70);
+        VALUES (1, 'Macacão', 70),
+               (2, 'Blusa', 25),
+               (3, 'Calça', 300),
+               (4, 'Meia', 5), 
+               (5, 'Cinto', 25), 
+               (6, 'Short', 70);
 
         INSERT INTO USUARIO(id_usuario, nome, cpf, email, senha, estado, municipio, tipo_logradouro, logradouro, numero, bairro, cep)
         VALUES (1, 'Amanda Ferreira', 12345,'amanda@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240),
@@ -193,10 +250,28 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         (10, 'Fernando Henrique', 32659,'fernando@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240);
 
         INSERT INTO TELEFONE(id_telefone, id_usuario, numero_telefone)
-        VALUES (1, 1, 985470122), (2, 2, 40028922), (3,3, 08007777000), (4,4,965441111), (5,5,987445632), (6,6,32180764), (7,7,20021001), (8,8, 30100259), (9,9, 782145215), (10,10, 54548181);
+        VALUES (1, 1, 985470122), 
+               (2, 2, 40028922), 
+               (3,3, 08007777000), 
+               (4,4,965441111), 
+               (5,5,987445632), 
+               (6,6,32180764), 
+               (7,7,20021001), 
+               (8,8, 30100259), 
+               (9,9, 782145215), 
+               (10,10, 54548181);
 
         INSERT INTO COMPRA(id_compra, id_produto, id_usuario, data_compra, quantidade)
-        VALUES (1, 3, 1, '01-08-2020',1), (2, 4, 1, '01-08-2020', 4), (3, 6, 2, '01-08-2020',2), (4,5,2, '01-08-2020',1),(5, 4, 3, '01-08-2020', 1), (6, 3, 3, '01-08-2020', 2);
+        VALUES (1, 3, 1, '01-08-2020',1), 
+               (2, 4, 2, '01-08-2020', 4), 
+               (3, 6, 3, '01-08-2020',2), 
+               (4, 5, 4, '01-08-2020',1),
+               (5, 4, 5, '01-08-2020', 1), 
+               (6, 3, 6, '01-08-2020', 2),
+               (7, 4, 7, '20-08-2020', 1),
+               (8, 6, 8, '28-08-2020', 2),
+               (9, 1, 9, '28-08-2020' , 1),
+               (10, 2, 10, 28-08-2020', 2);
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
