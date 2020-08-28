@@ -47,7 +47,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 > O sistema precisa inicialmente dos seguintes relatórios:
 
-* Relatorio que mostre para cada linha obtida o nome do cliente, sua identificação, produto comprado, seu preço, quantidade e o total. Os resultados devem ser apresentados ordenados por produto.
+* Relatorio que mostre o nome de todos os clientes, sua identificação, produto comprado, seu preço, quantidade e o total da compra. Os resultados devem ser apresentados ordenados por produto.
 * Relatório relativo aos produtos e compras. O resultado deverá mostrar qual o produto mais vendido do mês.
 * Relatório que mostre as informação relacionadas ao faturamento do mês. O resultado deverá apresentar o valor total de vendas no mês.
 
