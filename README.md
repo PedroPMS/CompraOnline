@@ -38,19 +38,19 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
      
     a) O sistema proposto fornece quais tipos de produtos?
-    b) O que deve ser fornecido no momento da compra? 
+    b) Qual o relatório pode ser obtido por meio desse Sistema?
 
 > O Sistema CompraOnline fornece os seguintes produtos:
 
 * Vestuário
 * Acessórios 
 
-> No momento da compra deve ser fornecida a quantidade do produto escolhido, apenas. 
+> O sistema precisa inicialmente dos seguintes relatórios:
 
+* Relatorio que mostre para cada linha obtida o nome do cliente, sua identificação, produto comprado, seu preço, quantidade e o total. Os resultados devem ser apresentados ordenados por produto.
+* Relatório relativo aos produtos e compras. O resultado deverá mostrar qual o produto mais vendido do mês.
+* Relatório que mostre as informação relacionadas ao faturamento do mês. O resultado deverá apresentar o valor total de vendas no mês.
 
-
-
- 
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
     a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
