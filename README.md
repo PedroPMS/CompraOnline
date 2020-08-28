@@ -271,7 +271,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
                (7, 4, 7, '20-08-2020', 1),
                (8, 6, 8, '28-08-2020', 2),
                (9, 1, 9, '28-08-2020' , 1),
-               (10, 2, 10, 28-08-2020', 2);
+               (10, 2, 10, '28-08-2020', 2);
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
