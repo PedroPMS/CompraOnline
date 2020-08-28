@@ -183,10 +183,17 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         INSERT INTO USUARIO(id_usuario, nome, cpf, email, senha, estado, municipio, tipo_logradouro, logradouro, numero, bairro, cep)
         VALUES (1, 'Amanda Ferreira', 12345,'amanda@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240),
         (2, 'Ana Elisa Rezende', 12120, 'anaelisa@gmail.com', '123@456', 'ES','Serra','Rua','Carapebus', 105, 'Valparaiso', 29165813),
-        (3, 'Pedro Paulo Silva', 99999, 'pedro@gmail.com', '123@456', 'ES', 'Vitória', 'Rua', 'Milton Ramalho Simões', 11, 'Jardim Camburi', 29090770);
+        (3, 'Pedro Paulo Silva', 99999, 'pedro@gmail.com', '123@456', 'ES', 'Vitória', 'Rua', 'Milton Ramalho Simões', 11, 'Jardim Camburi', 29090770),
+        (4, 'Lucia Gonçalves',78789, 'lucia@gmail.com,'123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 254, 'Araçás',29109600),
+        (5, 'Julia Clarindo',81254, 'julia@gmail.com,'123@456','ES','Cariacica','Rua', 'Emilio de Abreu', 254, 'Junqueira',29167841),
+        (6, 'Paula Abreu',96547, 'paula@gmail.com,'123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 256, 'Araçás',29109600),
+        (7, 'Joao Junqueira',79996,'joao@gmail.com, '123@456', 'ES', 'Cariacica', 'Rua', 'Nova', 98, 'Orquidea', 29456123),
+        (8, 'Viviane Reis',78452, 'viviane@gmail.com,'123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 256, 'Araçás',29109600),
+        (9, 'Thyago B', 54687, 'thyago@gmail.com', '123@456', 'ES','Serra','Rua','Carapebus', 105, 'Valparaiso', 29165813),
+        (10, 'Fernando Henrique', 32659,'fernando@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240);
 
         INSERT INTO TELEFONE(id_telefone, id_usuario, numero_telefone)
-        VALUES (1, 1, 985470122), (2, 2, 40028922), (3,3, 08007777000);
+        VALUES (1, 1, 985470122), (2, 2, 40028922), (3,3, 08007777000), (4,4,965441111), (5,5,987445632), (6,6,32180764), (7,7,20021001), (8,8, 30100259), (9,9, 782145215), (10,10, 54548181);
 
         INSERT INTO COMPRA(id_compra, id_produto, id_usuario, data_compra, quantidade)
         VALUES (1, 3, 1, '01-08-2020',1), (2, 4, 1, '01-08-2020', 4), (3, 6, 2, '01-08-2020',2), (4,5,2, '01-08-2020',1),(5, 4, 3, '01-08-2020', 1), (6, 3, 3, '01-08-2020', 2);
