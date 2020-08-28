@@ -33,7 +33,7 @@ Neste ponto a codificação não e necessária, somente as ideias de telas devem
 
 Sugestão: https://balsamiq.com/products/mockups/<br>
 
-![Alt text](https://github.com/discipbd1/trab01/blob/master/balsamiq.png?raw=true "Title") 
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/tela_compraonline.PNG?raw=true "Balsamiq") 
 ![Arquivo PDF do Protótipo Balsamiq feito para Sistema Compra Online](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/CompraOnline.pdf?raw=true "CompraOnline")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
      
