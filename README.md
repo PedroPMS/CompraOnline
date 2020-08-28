@@ -37,14 +37,17 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ![Arquivo PDF do Protótipo Balsamiq feito para Sistema Compra Online](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/CompraOnline.pdf?raw=true "CompraOnline")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
      
-    a) O sistema proposto poderá fornecer quais tipos de compras?
-    b) [a modificar] Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
+    a) O sistema proposto fornece quais tipos de produtos?
+    b) O que deve ser fornecido no momento da compra? 
 
 > O Sistema CompraOnline fornece os seguintes produtos:
 
-* Vestuário e acessórios 
+* Vestuário
+* Acessórios 
 
->> ##### Observações: <br> a) perceba que este relatório pode conter linhas com alguns dados repetidos (mas não todos). <br>  b) para os empregados que não possuirem alguma destas informações o valor no registro deve aparecer sem informação/nulo. 
+> No momento da compra deve ser fornecida a quantidade do produto escolhido, apenas. 
+
+
 
 
  
