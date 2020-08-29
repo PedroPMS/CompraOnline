@@ -56,7 +56,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
     b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/TabelaEmpresaCompraOnline.xlsx?raw=true "Tabela - CompraOnline")
     
     
 ### 5.MODELO CONCEITUAL<br>
