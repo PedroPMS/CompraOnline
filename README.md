@@ -275,6 +275,8 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
+
+#### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
     SELECT *
     FROM PRODUTO
 ![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/select%20all%20from%20produto.PNG?raw=true "Produtos")
@@ -294,7 +296,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     FROM COMPRA
  ![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/select%20all%20from%20compra.PNG?raw=true "Compra")
     </br>
-#### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
