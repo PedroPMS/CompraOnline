@@ -34,7 +34,7 @@ Neste ponto a codificação não e necessária, somente as ideias de telas devem
 Sugestão: https://balsamiq.com/products/mockups/<br>
 
 ![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/tela_compraonline.PNG?raw=true "Balsamiq") 
-![Arquivo PDF do Protótipo Balsamiq feito para Sistema Compra Online](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/CompraOnline.pdf?raw=true "CompraOnline")
+![Arquivo PDF do Protótipo Balsamiq feito para Sistema CompraOnline](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/CompraOnline.pdf?raw=true "CompraOnline")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
      
     a) O sistema proposto fornece quais tipos de produtos?
@@ -56,7 +56,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
     b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/TabelaEmpresaCompraOnline.xlsx?raw=true "Tabela - CompraOnline")
+![Exemplo de Tabela de dados do Sitema CompraOnline](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/TabelaEmpresaCompraOnline.xlsx?raw=true "Tabela - CompraOnline")
     
     
 ### 5.MODELO CONCEITUAL<br>
