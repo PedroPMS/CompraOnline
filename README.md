@@ -277,22 +277,22 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     SELECT *
     FROM PRODUTO
-![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/produtos.png?raw=true "Produtos")
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/select%20all%20from%20produto.PNG?raw=true "Produtos")
     </br>
 
     SELECT *
     FROM TELEFONE
-![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/telefone.png?raw=true "Telefone")
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/select%20all%20from%20telefone.PNG?raw=true "Telefone")
     </br>
     
     SELECT *
     FROM USUARIO
-![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/usuarios.png?raw=true "Usuário")
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/select%20all%20from%20usuario.PNG?raw=true "Usuário")
     </br>
 
     SELECT *
     FROM COMPRA
- ![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/compra.png?raw=true "Compra")
+ ![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/select%20all%20from%20compra.PNG?raw=true "Compra")
     </br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
