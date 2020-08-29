@@ -75,9 +75,12 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
-
+    [Grupo01]: Aline Prasser, Luara Hombre
+    Nenhuma recomendação foi dada.
+    
+    [Grupo02]: Gabriel Nascimento, Luiza de Alencar, Rebeca Borlini
+    Recomendações dadas: "No minimundo tem algumas informações a mais sobre a tabela "Produtos", pois fala que tem o atributo quantidade, e não aparece no mapa, somente no "compra", e no usuário também, como a parte do telefone e endereço, não foi mencionado no texto, então parecia que não precisava."
+    
 #### 5.2 Descrição dos dados 
     USUÁRIO: Tabela com dados do usuário do sistema
      Id_usuario: campo que armazena a identificação do usuário
