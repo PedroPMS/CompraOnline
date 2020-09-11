@@ -325,15 +325,68 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-    a) Criar minimo 1 de cada tipo
+
+     1 --  mostra todos os nomes de usuarios e nome dos produtos comprados 
+     SELECT usuario.nome, produto.nome
+     FROM usuario
+     INNER JOIN compra
+     ON usuario.id_usuario = compra.id_usuario
+     RIGHT OUTER JOIN produto
+     ON compra.id_produto = produto.id_produto
+
+    2 --  mostra todos os nomes de usuarios e respectivas quantidade de compras que estao relacionadas a eles 
+
+     SELECT usuario.nome, compra.quantidade
+     FROM usuario
+     LEFT OUTER JOIN compra
+     ON usuario.id_usuario = compra.id_usuario
+
+     3 -- Utilizando-se de Full join mostre os nomes dos produtos e compra em que eles aparecem 
+     
+     SELECT nome,id_compra
+     FROM produto
+     FULL OUTER JOIN compra
+     ON produto.id_produto = compra.id_produto
+
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+        
+     1- SELF JOIN
+   
+     SELECT A.nome, B.nome
+     FROM usuario A, usuario B
+     WHERE A. municipio = B.municipio
+
+    2 - VIEW
+   
+       CREATE VIEW mais_caros AS
+       SELECT nome,preco
+       FROM produto 
+       ORDER BY preco DESC
+       LIMIT 3
+     
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
+     
+    1-- Mostra todos os atributos relativos aos produtos, retornando apenas os registros cujos precos são menores que o valor médio dos precos presentes na tabela produto
+    
+    SELECT * FROM produto
+    WHERE produto.preco < (SELECT AVG(preco) FROM produto)
+    group by preco
+
+    2- mostra o nome do usuario e o numero dos produtos que ele comprou, somente para os usuarios que compraram mais de um produto.
+
+    SELECT usuario.nome, quantidade
+    FROM usuario
+    INNER JOIN compra
+    ON usuario.id_usuario = compra.id_usuario
+    WHERE compra.quantidade > 1
+    GROUP BY usuario.nome
+
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
