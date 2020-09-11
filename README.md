@@ -315,14 +315,110 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
+     delete from produto where id_produto = 1
+     delete from compra where id_compra = 9
+     delete from usuario where id_usuario = 9
+     
     b) Criar minimo 3 de atualização
+    update usuario
+    set nome = 'Joana Amaral', email = 'joana@gmail.com'
+    where id_usuario = 3
+
+    update produto
+    set preco = 10
+    where id_produto = 4
+
+    update telefone
+    set id_telefone = 9, numero_telefone = 989865654
+    where id_telefone = 10
+
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
+     SELECT usuario.nome, usuario.cpf, telefone.numero_telefone, produto.nome as nome_produto, compra.quantidade, compra.data_compra
+     from usuario
+     inner join telefone
+     ON (telefone.id_usuario = usuario.id_usuario)
+     inner join compra
+     on (compra.id_usuario = usuario.id_usuario)
+     inner join produto
+     on (produto.id_produto = compra.id_produto)
+     order by compra.data_compra ASC
+    
     b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+     select usuario.cpf, produto.nome as nome_produto, compra.data_compra
+     from usuario
+     inner join compra
+     on (compra.id_usuario = usuario.id_usuario)
+     inner join produto
+     on (produto.id_produto = compra.id_produto)
+     order by usuario.cpf
+
+     select usuario.nome, telefone.numero_telefone, compra.data_compra
+     from usuario
+     inner join telefone
+     on (telefone.id_usuario = usuario.id_usuario)
+     inner join compra
+     on (compra.id_usuario = usuario.id_usuario)
+     order by compra.data_compra ASC
+
+     select usuario.cpf, produto.nome, compra.quantidade
+     from usuario
+     inner join compra
+     on (compra.id_usuario = usuario.id_usuario)
+     inner join produto
+     on (produto.id_produto = compra.id_produto)
+     order by produto.nome
+
+     select usuario.nome, telefone.numero_telefone, usuario.email, usuario.estado, usuario.bairro
+     from usuario
+     inner join telefone
+     on (telefone.id_usuario = usuario.id_usuario)
+     order by usuario.bairro
+
+     select usuario.cpf, usuario.municipio, usuario.tipo_logradouro, usuario.logradouro, usuario.bairro, compra.data_compra
+     from usuario
+     inner join compra
+     on (compra.id_usuario = usuario.id_usuario)
+     order by usuario.municipio
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
+     select nome as nome_produto, count(*)
+     from produto
+     inner join compra
+     on (produto.id_produto = compra.id_produto)
+     group by nome
+
+     select usuario.nome, produto.nome as nome_produto, MAX(preco)
+     from produto
+     inner join compra
+     on (produto.id_produto = compra.id_produto)
+     inner join usuario
+     on (compra.id_usuario = usuario.id_usuario)
+     group by usuario.nome, produto.nome
+
+     select produto.nome, produto.preco, compra.data_compra, count(*)
+     from produto, compra
+     where produto.id_produto = compra.id_produto
+     group by produto.nome, produto.preco, compra.data_compra
+
+     select usuario.nome, telefone.numero_telefone, usuario.email, usuario.cpf, count(usuario.municipio)
+     from usuario, telefone
+     where usuario.id_usuario = telefone.id_usuario
+     group by usuario.nome, telefone.numero_telefone, usuario.email, usuario.cpf
+     having count(usuario.municipio) = 1
+
+     select usuario.cpf, produto.nome, sum(compra.quantidade * produto.preco) as total_compra
+     from usuario, produto, compra
+     where usuario.id_usuario = compra.id_usuario and compra.id_produto = produto.id_produto
+     group by usuario.cpf, produto.nome
+
+     select usuario.nome, produto.nome as nome_produto, compra.data_compra, usuario.tipo_logradouro || ' ' || usuario.logradouro ||', ' || usuario.numero as endereco_entrega
+     from usuario, produto, compra
+     where usuario.id_usuario = compra.id_usuario and compra.id_produto = produto.id_produto
+     group by usuario.nome, produto.nome, compra.data_compra, usuario.tipo_logradouro, usuario.logradouro, usuario.numero
+     order by usuario.nome ASC
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
 
