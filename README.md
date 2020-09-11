@@ -448,17 +448,22 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
-        
     
-    1 - VIEW
-   
+    1 -- mostra os 3 produtos mais caros
+  
        CREATE VIEW mais_caros AS
        SELECT nome,preco
        FROM produto 
        ORDER BY preco DESC
        LIMIT 3
-     
+       
+    2 -- mostra usuarios que moram no mesmo municipio
 
+     SELECT usuario1.nome as nome_usuario1, usuario2.nome as nome_usuario2
+     FROM usuario as usuario1
+     inner join usuario as usuario2
+     ON usuario1.municipio = usuario2.municipio
+   
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
