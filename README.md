@@ -449,13 +449,8 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
         
-     1- SELF JOIN
-   
-     SELECT A.nome, B.nome
-     FROM usuario A, usuario B
-     WHERE A. municipio = B.municipio
-
-    2 - VIEW
+    
+    1 - VIEW
    
        CREATE VIEW mais_caros AS
        SELECT nome,preco
@@ -474,7 +469,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     WHERE produto.preco < (SELECT AVG(preco) FROM produto)
     group by preco
 
-    2- mostra o nome do usuario e o numero dos produtos que ele comprou, somente para os usuarios que compraram mais de um produto.
+    2-- mostra o nome do usuario e o numero dos produtos que ele comprou, somente para os usuarios que compraram mais de um produto.
 
     SELECT usuario.nome, quantidade
     FROM usuario
@@ -482,6 +477,18 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     ON usuario.id_usuario = compra.id_usuario
     WHERE compra.quantidade > 1
     GROUP BY usuario.nome
+    
+    3-- Mostra todos os atributos relativos aos produtos, retornando apenas os registros cujos precos estão entre 5 - 50 reais.
+
+    SELECT * FROM produto
+    WHERE preco > 5
+    AND preco < 50
+
+    4-- mostra o nome do usuario e o número de vezes que comprou na loja
+
+    SELECT nome, COUNT(id_usuario) AS qnt_vezes
+    FROM usuario
+    GROUP BY nome
 
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
