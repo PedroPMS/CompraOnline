@@ -158,13 +158,13 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         ALTER TABLE USUARIO ALTER COLUMN cpf TYPE bigint
 
         ALTER TABLE TELEFONE
-        ADD CONSTRAINT fk_USUARIO_telefone FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+        ADD CONSTRAINT fk_USUARIO_telefone FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON Delete CASCADE;
 
         ALTER TABLE COMPRA
-        ADD CONSTRAINT fk_USUARIO_id_usuario FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+        ADD CONSTRAINT fk_USUARIO_id_usuario FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON Delete CASCADE;
 
         ALTER TABLE COMPRA
-        ADD CONSTRAINT fk_USUARIO_id_produto FOREIGN KEY (id_produto) REFERENCES PRODUTO(id_produto) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+        ADD CONSTRAINT fk_USUARIO_id_produto FOREIGN KEY (id_produto) REFERENCES PRODUTO(id_produto) MATCH FULL ON UPDATE CASCADE ON Delete CASCADE;
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
@@ -221,15 +221,15 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
         ALTER TABLE TELEFONE
         ADD CONSTRAINT fk_USUARIO_telefone FOREIGN KEY (id_usuario) 
-        REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+        REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON Delete CASCADE;
 
         ALTER TABLE COMPRA
         ADD CONSTRAINT fk_USUARIO_id_usuario FOREIGN KEY (id_usuario) 
-        REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+        REFERENCES USUARIO(id_usuario) MATCH FULL ON UPDATE CASCADE ON Delete CASCADE;
 
         ALTER TABLE COMPRA
         ADD CONSTRAINT fk_USUARIO_id_produto FOREIGN KEY (id_produto) 
-        REFERENCES PRODUTO(id_produto) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE;
+        REFERENCES PRODUTO(id_produto) MATCH FULL ON UPDATE CASCADE ON Delete CASCADE;
 
         --INSERT--
         INSERT INTO PRODUTO(id_produto, nome, preco)
@@ -280,188 +280,288 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
 
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-    SELECT *
-    FROM PRODUTO
-![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/select%20all%20from%20produto.PNG?raw=true "Produtos")
+    Select *
+    From PRODUTO
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/Select%20all%20From%20produto.PNG?raw=true "Produtos")
     </br>
 
-    SELECT *
-    FROM TELEFONE
-![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/select%20all%20from%20telefone.PNG?raw=true "Telefone")
+    Select *
+    From TELEFONE
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/Select%20all%20From%20telefone.PNG?raw=true "Telefone")
     </br>
     
-    SELECT *
-    FROM USUARIO
-![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/select%20all%20from%20usuario.PNG?raw=true "Usuário")
+    Select *
+    From USUARIO
+![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/Select%20all%20From%20usuario.PNG?raw=true "Usuário")
     </br>
 
-    SELECT *
-    FROM COMPRA
- ![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/select%20all%20from%20compra.PNG?raw=true "Compra")
+    Select *
+    From COMPRA
+ ![Alt text](https://github.com/PedroPMS/CompraOnline/blob/master/images/Select%20all%20From%20compra.PNG?raw=true "Compra")
     </br>
 
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
-#### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+#### 9.2	CONSULTAS DAS TABELAS COM FILTROS Where (Mínimo 4)<br>
+    Select *
+    From usuario
+    Where municipio = 'Vitória'
+
+    Select *
+    From usuario
+    Where tipo_logradouro = 'Rua'
+
+    Select *
+    From compra
+    Where quantidade = 1
+
+    Select *
+    From telefone
+    Where id_usuario = 1
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-    a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+    Select *
+    From usuario
+    Where bairro = 'Soteco' And tipo_logradouro = 'Rua'
+
+    Select *
+    From usuario
+    Where municipio = 'Vitória' or municipio = 'Serra'
+
+    Select *
+    From produto
+    Where preco = 25 or preco = 70
+
+    Select *
+    From compra
+    Where data_compra = '2020-01-08' or quantidade = 2
+
+    Select *
+    From telefone
+    Where numero_telefone Is Not Null
+
+
+    Select *
+    From produto
+    Where preco > 60
+
+    Select *
+    From compra
+    Where quantidade <= 3
+
+    Select *
+    From produto
+    Where preco <= 30
+
+
+    Select nome, estado as UF, municipio as cidade
+    From usuario
+
+    Select id_usuario as usuario, numero_telefone as telefone
+    From telefone
+
+    Select nome as produto, preco as valor
+    From produto
+
+
+
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
+    Select *
+    From produto
+    Where nome like '%a'
+
+    Select *
+    From usuario
+    Where nome like 'A%a'
+
+    Select *
+    From usuario
+    Where municipio ilike 'v%'
+
+    Select *
+    From usuario
+    Where estado like 'E_'
+
+    Select *
+    From usuario
+    Where tipo_logradouro ilike '___'
+
+    
+    Select *
+    From compra
+    Where data_compra = current_date
+
+    Select data_compra, current_date as dia_atual, age(current_date,data_compra)
+    From compra
+
+    Select data_compra, date_part('days',data_compra)
+    From compra
+
+    Select isfinite(data_compra)
+    From compra
+
+    Select data_compra, extract('year' From data_compra) as ano_compra
+    From compra
+
+    Select concat(date_part('year',data_compra), ' qnt: ', quantidade)
+    From compra
+
+    Select *
+    From compra
+    Where data_compra = current_date
+
+
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
-     delete from produto where id_produto = 1
-     delete from compra where id_compra = 9
-     delete from usuario where id_usuario = 9
+    Delete From produto Where id_produto = 1
+    Delete From compra Where id_compra = 9
+    Delete From usuario Where id_usuario = 9
      
     b) Criar minimo 3 de atualização
-    update usuario
-    set nome = 'Joana Amaral', email = 'joana@gmail.com'
-    where id_usuario = 3
+    Update usuario
+    Set nome = 'Joana Amaral', email = 'joana@gmail.com'
+    Where id_usuario = 3
 
-    update produto
-    set preco = 10
-    where id_produto = 4
+    Update produto
+    Set preco = 10
+    Where id_produto = 4
 
-    update telefone
-    set id_telefone = 9, numero_telefone = 989865654
-    where id_telefone = 10
+    Update telefone
+    Set id_telefone = 9, numero_telefone = 989865654
+    Where id_telefone = 10
 
 
-#### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
+#### 9.6	CONSULTAS COM Inner Join E Order BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
-     SELECT usuario.nome, usuario.cpf, telefone.numero_telefone, produto.nome as nome_produto, compra.quantidade, compra.data_compra
-     from usuario
-     inner join telefone
+     Select usuario.nome, usuario.cpf, telefone.numero_telefone, produto.nome as nome_produto, compra.quantidade, compra.data_compra
+     From usuario
+     Inner Join telefone
      ON (telefone.id_usuario = usuario.id_usuario)
-     inner join compra
+     Inner Join compra
      on (compra.id_usuario = usuario.id_usuario)
-     inner join produto
+     Inner Join produto
      on (produto.id_produto = compra.id_produto)
-     order by compra.data_compra ASC
+     Order by compra.data_compra ASC
     
     b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
-     select usuario.cpf, produto.nome as nome_produto, compra.data_compra
-     from usuario
-     inner join compra
+     Select usuario.cpf, produto.nome as nome_produto, compra.data_compra
+     From usuario
+     Inner Join compra
      on (compra.id_usuario = usuario.id_usuario)
-     inner join produto
+     Inner Join produto
      on (produto.id_produto = compra.id_produto)
-     order by usuario.cpf
+     Order by usuario.cpf
 
-     select usuario.nome, telefone.numero_telefone, compra.data_compra
-     from usuario
-     inner join telefone
+     Select usuario.nome, telefone.numero_telefone, compra.data_compra
+     From usuario
+     Inner Join telefone
      on (telefone.id_usuario = usuario.id_usuario)
-     inner join compra
+     Inner Join compra
      on (compra.id_usuario = usuario.id_usuario)
-     order by compra.data_compra ASC
+     Order by compra.data_compra ASC
 
-     select usuario.cpf, produto.nome, compra.quantidade
-     from usuario
-     inner join compra
+     Select usuario.cpf, produto.nome, compra.quantidade
+     From usuario
+     Inner Join compra
      on (compra.id_usuario = usuario.id_usuario)
-     inner join produto
+     Inner Join produto
      on (produto.id_produto = compra.id_produto)
-     order by produto.nome
+     Order by produto.nome
 
-     select usuario.nome, telefone.numero_telefone, usuario.email, usuario.estado, usuario.bairro
-     from usuario
-     inner join telefone
+     Select usuario.nome, telefone.numero_telefone, usuario.email, usuario.estado, usuario.bairro
+     From usuario
+     Inner Join telefone
      on (telefone.id_usuario = usuario.id_usuario)
-     order by usuario.bairro
+     Order by usuario.bairro
 
-     select usuario.cpf, usuario.municipio, usuario.tipo_logradouro, usuario.logradouro, usuario.bairro, compra.data_compra
-     from usuario
-     inner join compra
+     Select usuario.cpf, usuario.municipio, usuario.tipo_logradouro, usuario.logradouro, usuario.bairro, compra.data_compra
+     From usuario
+     Inner Join compra
      on (compra.id_usuario = usuario.id_usuario)
-     order by usuario.municipio
+     Order by usuario.municipio
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
-     select nome as nome_produto, count(*)
-     from produto
-     inner join compra
+     Select nome as nome_produto, count(*)
+     From produto
+     Inner Join compra
      on (produto.id_produto = compra.id_produto)
      group by nome
 
-     select usuario.nome, produto.nome as nome_produto, MAX(preco)
-     from produto
-     inner join compra
+     Select usuario.nome, produto.nome as nome_produto, MAX(preco)
+     From produto
+     Inner Join compra
      on (produto.id_produto = compra.id_produto)
-     inner join usuario
+     Inner Join usuario
      on (compra.id_usuario = usuario.id_usuario)
      group by usuario.nome, produto.nome
 
-     select produto.nome, produto.preco, compra.data_compra, count(*)
-     from produto, compra
-     where produto.id_produto = compra.id_produto
+     Select produto.nome, produto.preco, compra.data_compra, count(*)
+     From produto, compra
+     Where produto.id_produto = compra.id_produto
      group by produto.nome, produto.preco, compra.data_compra
 
-     select usuario.nome, telefone.numero_telefone, usuario.email, usuario.cpf, count(usuario.municipio)
-     from usuario, telefone
-     where usuario.id_usuario = telefone.id_usuario
+     Select usuario.nome, telefone.numero_telefone, usuario.email, usuario.cpf, count(usuario.municipio)
+     From usuario, telefone
+     Where usuario.id_usuario = telefone.id_usuario
      group by usuario.nome, telefone.numero_telefone, usuario.email, usuario.cpf
      having count(usuario.municipio) = 1
 
-     select usuario.cpf, produto.nome, sum(compra.quantidade * produto.preco) as total_compra
-     from usuario, produto, compra
-     where usuario.id_usuario = compra.id_usuario and compra.id_produto = produto.id_produto
+     Select usuario.cpf, produto.nome, sum(compra.quantidade * produto.preco) as total_compra
+     From usuario, produto, compra
+     Where usuario.id_usuario = compra.id_usuario and compra.id_produto = produto.id_produto
      group by usuario.cpf, produto.nome
 
-     select usuario.nome, produto.nome as nome_produto, compra.data_compra, usuario.tipo_logradouro || ' ' || usuario.logradouro ||', ' || usuario.numero as endereco_entrega
-     from usuario, produto, compra
-     where usuario.id_usuario = compra.id_usuario and compra.id_produto = produto.id_produto
+     Select usuario.nome, produto.nome as nome_produto, compra.data_compra, usuario.tipo_logradouro || ' ' || usuario.logradouro ||', ' || usuario.numero as endereco_entrega
+     From usuario, produto, compra
+     Where usuario.id_usuario = compra.id_usuario and compra.id_produto = produto.id_produto
      group by usuario.nome, produto.nome, compra.data_compra, usuario.tipo_logradouro, usuario.logradouro, usuario.numero
-     order by usuario.nome ASC
+     Order by usuario.nome ASC
 
-#### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
+#### 9.8	CONSULTAS COM LEFT, RIGHT E FULL Join (Mínimo 4)<br>
 
      1 --  mostra todos os nomes de usuarios e nome dos produtos comprados 
-     SELECT usuario.nome, produto.nome
-     FROM usuario
-     INNER JOIN compra
+     Select usuario.nome, produto.nome
+     From usuario
+     Inner Join compra
      ON usuario.id_usuario = compra.id_usuario
-     RIGHT OUTER JOIN produto
+     RIGHT OUTER Join produto
      ON compra.id_produto = produto.id_produto
 
     2 --  mostra todos os nomes de usuarios e respectivas quantidade de compras que estao relacionadas a eles 
 
-     SELECT usuario.nome, compra.quantidade
-     FROM usuario
-     LEFT OUTER JOIN compra
+     Select usuario.nome, compra.quantidade
+     From usuario
+     LEFT OUTER Join compra
      ON usuario.id_usuario = compra.id_usuario
 
-     3 -- Utilizando-se de Full join mostre os nomes dos produtos e compra em que eles aparecem 
+     3 -- Utilizando-se de Full Join mostre os nomes dos produtos e compra em que eles aparecem 
      
-     SELECT nome,id_compra
-     FROM produto
-     FULL OUTER JOIN compra
+     Select nome,id_compra
+     From produto
+     FULL OUTER Join compra
      ON produto.id_produto = compra.id_produto
 
 
-#### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
+#### 9.9	CONSULTAS COM SELF Join E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
     
     1 -- mostra os 3 produtos mais caros
   
        CREATE VIEW mais_caros AS
-       SELECT nome,preco
-       FROM produto 
-       ORDER BY preco DESC
+       Select nome,preco
+       From produto 
+       Order BY preco DESC
        LIMIT 3
        
     2 -- mostra usuarios que moram no mesmo municipio
 
-     SELECT usuario1.nome as nome_usuario1, usuario2.nome as nome_usuario2
-     FROM usuario as usuario1
-     inner join usuario as usuario2
+     Select usuario1.nome as nome_usuario1, usuario2.nome as nome_usuario2
+     From usuario as usuario1
+     Inner Join usuario as usuario2
      ON usuario1.municipio = usuario2.municipio
    
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
@@ -470,29 +570,29 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
      
     1-- Mostra todos os atributos relativos aos produtos, retornando apenas os registros cujos precos são menores que o valor médio dos precos presentes na tabela produto
     
-    SELECT * FROM produto
-    WHERE produto.preco < (SELECT AVG(preco) FROM produto)
+    Select * From produto
+    Where produto.preco < (Select AVG(preco) From produto)
     group by preco
 
     2-- mostra o nome do usuario e o numero dos produtos que ele comprou, somente para os usuarios que compraram mais de um produto.
 
-    SELECT usuario.nome, quantidade
-    FROM usuario
-    INNER JOIN compra
+    Select usuario.nome, quantidade
+    From usuario
+    Inner Join compra
     ON usuario.id_usuario = compra.id_usuario
-    WHERE compra.quantidade > 1
+    Where compra.quantidade > 1
     GROUP BY usuario.nome
     
     3-- Mostra todos os atributos relativos aos produtos, retornando apenas os registros cujos precos estão entre 5 - 50 reais.
 
-    SELECT * FROM produto
-    WHERE preco > 5
+    Select * From produto
+    Where preco > 5
     AND preco < 50
 
     4-- mostra o nome do usuario e o número de vezes que comprou na loja
 
-    SELECT nome, COUNT(id_usuario) AS qnt_vezes
-    FROM usuario
+    Select nome, COUNT(id_usuario) AS qnt_vezes
+    From usuario
     GROUP BY nome
 
 
