@@ -319,6 +319,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     Select *
     From telefone
     Where id_usuario = 1
+    
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     Select *
     From usuario
@@ -362,8 +363,6 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
     Select nome as produto, preco as valor
     From produto
-
-
 
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
@@ -498,28 +497,37 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
      on (compra.id_usuario = usuario.id_usuario)
      group by usuario.nome, produto.nome
 
-     Select produto.nome, produto.preco, compra.data_compra, count(*)
-     From produto, compra
-     Where produto.id_produto = compra.id_produto
+     select produto.nome, produto.preco, compra.data_compra, count(*)
+     from produto
+     inner join compra
+     on (produto.id_produto = compra.id_produto)
      group by produto.nome, produto.preco, compra.data_compra
 
-     Select usuario.nome, telefone.numero_telefone, usuario.email, usuario.cpf, count(usuario.municipio)
-     From usuario, telefone
-     Where usuario.id_usuario = telefone.id_usuario
+     select usuario.nome, telefone.numero_telefone, usuario.email, usuario.cpf, count(usuario.municipio)
+     from usuario
+     inner join telefone
+     on (usuario.id_usuario = telefone.id_usuario)
      group by usuario.nome, telefone.numero_telefone, usuario.email, usuario.cpf
      having count(usuario.municipio) = 1
 
-     Select usuario.cpf, produto.nome, sum(compra.quantidade * produto.preco) as total_compra
-     From usuario, produto, compra
-     Where usuario.id_usuario = compra.id_usuario and compra.id_produto = produto.id_produto
+     select usuario.cpf, produto.nome, sum(compra.quantidade * produto.preco) as total_compra
+     from usuario
+     inner join compra
+     on usuario.id_usuario = compra.id_usuario
+     inner join produto
+     on (compra.id_produto = produto.id_produto)
      group by usuario.cpf, produto.nome
 
-     Select usuario.nome, produto.nome as nome_produto, compra.data_compra, usuario.tipo_logradouro || ' ' || usuario.logradouro ||', ' || usuario.numero as endereco_entrega
-     From usuario, produto, compra
-     Where usuario.id_usuario = compra.id_usuario and compra.id_produto = produto.id_produto
+     select usuario.nome, produto.nome as nome_produto, compra.data_compra, usuario.tipo_logradouro || ' ' || usuario.logradouro ||', ' || usuario.numero as endereco_entrega
+     from usuario
+     inner join compra
+     on (usuario.id_usuario = compra.id_usuario)
+     inner join produto
+     on (compra.id_produto = produto.id_produto)
      group by usuario.nome, produto.nome, compra.data_compra, usuario.tipo_logradouro, usuario.logradouro, usuario.numero
-     Order by usuario.nome ASC
-
+     order by usuario.nome ASC
+     
+     
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL Join (Mínimo 4)<br>
 
      1 --  mostra todos os nomes de usuarios e nome dos produtos comprados 
