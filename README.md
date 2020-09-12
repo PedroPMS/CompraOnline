@@ -545,12 +545,21 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
      LEFT OUTER Join compra
      ON usuario.id_usuario = compra.id_usuario
 
-     3 -- Utilizando-se de Full Join mostre os nomes dos produtos e compra em que eles aparecem 
+     3 -- mostra os nomes dos produtos e compra em que eles aparecem 
      
      Select nome,id_compra
      From produto
      FULL OUTER Join compra
      ON produto.id_produto = compra.id_produto
+     
+     4-- mostra os nomes e cpf dos os empregados que compraram mais de um produto  
+
+     SELECT nome,cpf
+     FROM usuario
+     FULL OUTER JOIN compra
+     ON usuario.id_usuario = compra.id_usuario
+     WHERE quantidade > 1
+
 
 
 #### 9.9	CONSULTAS COM SELF Join E VIEW (Mínimo 6)<br>
@@ -571,6 +580,37 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
      From usuario as usuario1
      Inner Join usuario as usuario2
      ON usuario1.municipio = usuario2.municipio
+     
+     3 -- mostra quantidade vendida
+  
+     CREATE VIEW quantidade_vendida AS
+     SELECT SUM(quantidade)
+     FROM compra
+     
+     4-- mostra o valor total vendido
+     
+    CREATE VIEW valor_total_vendido AS
+    SELECT nome, preco as preco_unitario, quantidade as quantidade_vendida, quantidade * preco as total_vendido
+    FROM compra
+    INNER JOIN produto
+    ON produto.id_produto=compra.id_produto
+    
+    5-- mostra produto mais caro e o mais barato
+    
+    CREATE VIEW dados_produtos AS
+    SELECT MAX(preco), MIN(preco)
+    FROM produto
+    
+    6- mostra produtos não comprados
+    
+      CREATE VIEW produtos_nao_comprados AS
+      SELECT nome
+      FROM produto
+      WHERE id_produto NOT IN (SELECT id_produto FROM compra)
+
+
+
+
    
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
