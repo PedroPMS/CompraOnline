@@ -233,7 +233,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
         --INSERT--
         INSERT INTO PRODUTO(nome, preco)
-        VALUES ('Macacão', 70),('Blusa', 25),('Calça', 300),('Meia', 5), 
+        VALUES ('Macacão', 70),('Blusa', 25),('Calça cintura alta', 300),('Meia', 5), 
                ('Cinto', 25),('Short', 70),('Anoraque', 60),('Avacote', 227),
                ('Hábito', 96),('Jaleco', 286),('Japona', 353),('Beibidol', 130),
                ('Bermuda', 357),('Blazer', 125),('Blusão', 214),('Blusa de lã', 127),
