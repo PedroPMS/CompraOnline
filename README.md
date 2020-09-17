@@ -236,7 +236,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         VALUES ('Macacão', 70),('Blusa', 25),('Calça', 300),('Meia', 5), 
                ('Cinto', 25),('Short', 70),('Anoraque', 60),('Avacote', 227),
                ('Hábito', 96),('Jaleco', 286),('Japona', 353),('Beibidol', 130),
-               ('Bermuda', 357),('Blazer', 125),('Blusa', 214),('Blusa de lã', 127),
+               ('Bermuda', 357),('Blazer', 125),('Blusão', 214),('Blusa de lã', 127),
                ('Blêizer', 362),('Boina', 334),('Libré', 367),('Luva', 129),('Manga', 376),
                ('Mantilha', 321),('Mantô', 143),('Maxissaia', 197),('Meia-calça', 332),
                ('Meias', 11),('Mitene', 227),('Botão', 297),('Braguilha', 155),('Brial', 216),
