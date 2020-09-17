@@ -119,22 +119,22 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         --CRIAÇÃO TABELAS--
 
         CREATE TABLE PRODUTO(
-         id_produto integer not null, 
+         id_produto serial not null, 
          nome varchar(15), preco float, 
          primary key(id_produto));
 
         CREATE TABLE TELEFONE(
-         id_telefone integer not null, 
+         id_telefone serial not null, 
          id_usuario integer, 
          numero_telefone bigint, 
          primary key (id_telefone));
 
         CREATE TABLE USUARIO(
-         id_usuario integer not null, 
+         id_usuario serial not null, 
          nome varchar(80), 
          cpf bigint, 
          email varchar(100), 
-         senha varchar(15), 
+         senha varchar(30), 
          estado varchar(2), 
          municipio varchar(50),
          tipo_logradouro varchar(10), 
@@ -145,7 +145,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
          primary key(id_usuario));
 
         CREATE TABLE COMPRA(
-         id_compra integer not null, 
+         id_compra serial not null, 
          id_produto integer, 
          id_usuario integer, 
          data_compra date, 
@@ -180,22 +180,22 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         --CRIAÇÃO TABELAS--
 
         CREATE TABLE PRODUTO(
-         id_produto integer not null, 
+         id_produto serial not null, 
          nome varchar(15), preco float, 
          primary key(id_produto));
 
         CREATE TABLE TELEFONE(
-         id_telefone integer not null, 
+         id_telefone serial not null, 
          id_usuario integer, 
          numero_telefone bigint, 
          primary key (id_telefone));
 
         CREATE TABLE USUARIO(
-         id_usuario integer not null, 
+         id_usuario serial not null, 
          nome varchar(80), 
          cpf bigint, 
          email varchar(100), 
-         senha varchar(15), 
+         senha varchar(30), 
          estado varchar(2), 
          municipio varchar(50),
          tipo_logradouro varchar(10), 
@@ -206,7 +206,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
          primary key(id_usuario));
 
         CREATE TABLE COMPRA(
-         id_compra integer not null, 
+         id_compra serial not null, 
          id_produto integer, 
          id_usuario integer, 
          data_compra date, 
@@ -232,51 +232,127 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         REFERENCES PRODUTO(id_produto) MATCH FULL ON UPDATE CASCADE ON Delete CASCADE;
 
         --INSERT--
-        INSERT INTO PRODUTO(id_produto, nome, preco)
-        VALUES (1, 'Macacão', 70),
-               (2, 'Blusa', 25),
-               (3, 'Calça', 300),
-               (4, 'Meia', 5), 
-               (5, 'Cinto', 25), 
-               (6, 'Short', 70);
+        INSERT INTO PRODUTO(nome, preco)
+        VALUES ('Macacão', 70),('Blusa', 25),('Calça', 300),('Meia', 5), 
+               ('Cinto', 25),('Short', 70),('Anoraque', 60),('Avacote', 227),
+               ('Hábito', 96),('Jaleco', 286),('Japona', 353),('Beibidol', 130),
+               ('Bermuda', 357),('Blazer', 125),('Blusa', 214),('Blusa de lã', 127),
+               ('Blêizer', 362),('Boina', 334),('Libré', 367),('Luva', 129),('Manga', 376),
+               ('Mantilha', 321),('Mantô', 143),('Maxissaia', 197),('Meia-calça', 332),
+               ('Meias', 11),('Mitene', 227),('Botão', 297),('Braguilha', 155),('Brial', 216),
+               ('Burca', 238),('Bustiê', 41),('Bódi', 108),('Calça', 302),('Calçado', 179),
+               ('Calças', 307),('Calção', 275),('Calções', 380),('Camal', 34),('Camalha', 237),
+               ('Camisa', 239),('Camisa social', 264),('Pano', 397),('Pantalonas', 70),('Parangolé', 126),
+               ('Parca', 338),('Pareô', 43),('Colete', 343),('Collant', 145),('Colã', 62),('Conjunto', 274),
+               ('Coura', 140),('Cueca', 124),('Silaque', 170),('Smoking', 97),('Soquete', 314);
 
-        INSERT INTO USUARIO(id_usuario, nome, cpf, email, senha, estado, municipio, tipo_logradouro, logradouro, numero, bairro, cep)
-        VALUES (1, 'Amanda Ferreira', 12345,'amanda@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240),
-        (2, 'Ana Elisa Rezende', 12120, 'anaelisa@gmail.com', '123@456', 'ES','Serra','Rua','Carapebus', 105, 'Valparaiso', 29165813),
-        (3, 'Pedro Paulo Silva', 99999, 'pedro@gmail.com', '123@456', 'ES', 'Vitória', 'Rua', 'Milton Ramalho Simões', 11, 'Jardim Camburi', 29090770),
-        (4, 'Lucia Gonçalves',78789, 'lucia@gmail.com','123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 254, 'Araçás',29109600),
-        (5, 'Julia Clarindo',81254, 'julia@gmail.com','123@456','ES','Cariacica','Rua', 'Emilio de Abreu', 254, 'Junqueira',29167841),
-        (6, 'Paula Abreu',96547, 'paula@gmail.com','123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 256, 'Araçás',29109600),
-        (7, 'Joao Junqueira',79996,'joao@gmail.com', '123@456', 'ES', 'Cariacica', 'Rua', 'Nova', 98, 'Orquidea', 29456123),
-        (8, 'Viviane Reis',78452, 'viviane@gmail.com','123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 256, 'Araçás',29109600),
-        (9, 'Thyago B', 54687, 'thyago@gmail.com', '123@456', 'ES','Serra','Rua','Carapebus', 105, 'Valparaiso', 29165813),
-        (10, 'Fernando Henrique', 32659,'fernando@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240);
+        INSERT INTO USUARIO(nome, cpf, email, senha, estado, municipio, tipo_logradouro, logradouro, numero, bairro, cep)
+        VALUES ('Amanda Ferreira', 12345,'amanda@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240),
+        ('Ana Elisa Rezende', 12120, 'anaelisa@gmail.com', '123@456', 'ES','Serra','Rua','Carapebus', 105, 'Valparaiso', 29165813),
+        ('Pedro Paulo Silva', 99999, 'pedro@gmail.com', '123@456', 'ES', 'Vitória', 'Rua', 'Milton Ramalho Simões', 11, 'Jardim Camburi', 29090770),
+        ('Lucia Gonçalves',78789, 'lucia@gmail.com','123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 254, 'Araçás',29109600),
+        ('Julia Clarindo',81254, 'julia@gmail.com','123@456','ES','Cariacica','Rua', 'Emilio de Abreu', 254, 'Junqueira',29167841),
+        ('Paula Abreu',96547, 'paula@gmail.com','123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 256, 'Araçás',29109600),
+        ('Joao Junqueira',79996,'joao@gmail.com', '123@456', 'ES', 'Cariacica', 'Rua', 'Nova', 98, 'Orquidea', 29456123),
+        ('Viviane Reis',78452, 'viviane@gmail.com','123@456','ES','Vila Velha','Avenida', 'Carlos Lindemberg', 256, 'Araçás',29109600),
+        ('Thyago B', 54687, 'thyago@gmail.com', '123@456', 'ES','Serra','Rua','Carapebus', 105, 'Valparaiso', 29165813),
+        ('Fernando Henrique', 32659,'fernando@gmail.com', '123@456', 'ES','Vila Velha', 'Rua', 'Olegario Mariano', 1338, 'Soteco', 29106240),
+        ('Hardy Teresa', 48173, 'rollin.bradtke@witting.com', 'baumbach.imogene', 'ES', 'Itarana', 'Rua', 'Althea Josefa', 11,'Jardim Camburi', 29008673),
+        ('Keely Karlee', 24836, 'bosco.lukas@koelpin.com', 'zion96', 'ES', 'Serra', 'Distrito', 'Bill Lucius', 582,'Maruípe', 29600628),
+        ('Wyatt Tillman', 69557, 'cleve03@robel.com', 'jayda.collier', 'ES', 'Serra', 'Travessa', 'Garrison Kieran', 96,'Praia do Canto', 29059309),    
+        ('Peggie Marlene', 67568, 'zlakin@gmail.com', 'adelia01', 'ES', 'Colatina', 'Estação', 'Ernestina Emmanuelle', 811,'Jardim da Penha', 29545023),
+        ('Jaleel Leone', 25282, 'andreane15@hotmail.com', 'brooklyn94', 'ES', 'Cariacica', 'Travessa', 'Kiara Jules', 374,'Santo Antônio', 29823693),   
+        ('Hudson Chet', 59916, 'bonnie.tillman@nienow.com', 'nkirlin', 'ES', 'Vitória', 'Travessa', 'Chelsie Cecelia', 798,'Jardim Camburi', 29914132), 
+        ('Missouri Ubaldo', 18277, 'thompson.emma@yahoo.com', 'mandy02', 'ES', 'Colatina', 'Alameda', 'Cierra Johnpaul', 977,'Jardim da Penha', 29168101),
+        ('Noel Gregorio', 36006, 'eddie71@hill.org', 'randall.sporer', 'ES', 'Cariacica', 'Rua', 'Jayce Hulda', 747,'Jardim da Penha', 29850758),
+        ('Louvenia Irving', 24044, 'destini.block@gmail.com', 'luis.hill', 'ES', 'Vitória', 'Avenida', 'Layne Dejon', 838,'Maruípe', 29818590),
+        ('Kari Kody', 62397, 'burley83@trantow.net', 'okessler', 'ES', 'Serra', 'Alameda', 'Elyssa Cynthia', 126,'Santo Antônio', 29421093),
+        ('Wade Kendrick', 39256, 'rframi@tromp.net', 'kiana88', 'ES', 'Colatina', 'Alameda', 'Greta Misael', 324,'Goiabeiras', 29019184),
+        ('Trevion Gilbert', 56238, 'vandervort.robin@yahoo.com', 'adams.presley', 'ES', 'Cariacica', 'Avenida', 'Bianka Margot', 47,'Praia do Canto', 29042556),
+        ('Theron Lea', 34951, 'margarita.quitzon@murphy.com', 'armstrong.vicenta', 'ES', 'Colatina', 'Distrito', 'Jonas Saul', 919,'Praia do Canto', 29681950),
+        ('Dena Keyon', 38438, 'rosalind03@gmail.com', 'christelle.roberts', 'ES', 'Pedro Canário', 'Alameda', 'Kaleb Juwan', 23,'Goiabeiras', 29675126),
+        ('Kenneth Elmore', 37287, 'celia.terry@wilderman.com', 'oscar.lang', 'ES', 'Itarana', 'Avenida', 'Jaron Bud', 572,'São Pedro', 29069626),
+        ('Eladio Francesca', 24148, 'qanderson@doyle.com', 'martina99', 'ES', 'Vila Velha', 'Avenida', 'Luisa Richie', 260,'Jardim Camburi', 29691561),
+        ('Derick Colleen', 64537, 'ferne51@hotmail.com', 'harrison.ryan', 'ES', 'Vila Velha', 'Distrito', 'Nola Chanel', 990,'Goiabeiras', 29862035),
+        ('Bernie Lessie', 64482, 'tschumm@wintheiser.com', 'jaylan.cassin', 'ES', 'Pedro Canário', 'Alameda', 'Natalia Nelle', 985,'São Pedro', 29393591),
+        ('Lavon Agustina', 28773, 'arice@yahoo.com', 'damore.alessandra', 'ES', 'Vitória', 'Rua', 'Myrtle Justyn', 458,'São Pedro', 29389701),
+        ('Rae Levi', 59368, 'pgerlach@sawayn.com', 'flittle', 'ES', 'Itarana', 'Avenida', 'Quinton Dayna', 873,'Goiabeiras', 29343750),
+        ('Chloe Lucas', 61692, 'nolan.elda@gmail.com', 'royal42', 'ES', 'Colatina', 'Estação', 'Bell April', 583,'Praia do Canto', 29531763),
+        ('Nels Keeley', 20995, 'fahey.tony@hotmail.com', 'barmstrong', 'ES', 'Serra', 'Distrito', 'Karley Jalyn', 1000,'Jucutuquara', 29486076),
+        ('Napoleon Keon', 63237, 'daron73@gmail.com', 'lwiegand', 'ES', 'Colatina', 'Rua', 'Dina Emerson', 829,'São Pedro', 29271601),
+        ('Kathryn Eula', 24430, 'cummings.berneice@jenkins.com', 'ikutch', 'ES', 'Colatina', 'Travessa', 'Joy Maureen', 536,'Jucutuquara', 29459415),
+        ('Hannah Sammy', 22742, 'madelynn.smith@mosciski.biz', 'darien44', 'ES', 'Cariacica', 'Travessa', 'Erick Marcel', 595,'Jardim Camburi', 29510613),
+        ('Houston Jennie', 61441, 'hickle.berenice@gmail.com', 'gabe.raynor', 'ES', 'Vitória', 'Rua', 'Serena Forest', 50,'São Pedro', 29883816),
+        ('Alverta Grayce', 16126, 'lemke.oma@nolan.com', 'feil.roberta', 'ES', 'Colatina', 'Alameda', 'Clemens Gisselle', 434,'Praia do Canto', 29008084),
+        ('Elinore Franco', 39632, 'holden.reichel@hotmail.com', 'enos41', 'ES', 'Colatina', 'Rua', 'Amari Caitlyn', 555,'Jucutuquara', 29796417),
+        ('Kobe Cleora', 48910, 'emmitt.howell@yahoo.com', 'cadams', 'ES', 'Vitória', 'Distrito', 'Lexus Greta', 312,'Praia do Canto', 29000179),
+        ('Uriah Pink', 50452, 'yfay@hotmail.com', 'erling.moore', 'ES', 'Cariacica', 'Travessa', 'Leann Albertha', 758,'Jucutuquara', 29860397),
+        ('Anya Rae', 24310, 'orosenbaum@hotmail.com', 'eduardo.oconnell', 'ES', 'Cariacica', 'Alameda', 'Jaylen Violette', 73,'Goiabeiras', 29992643),
+        ('Fanny Cloyd', 45012, 'carter.phyllis@parisian.net', 'boyle.mia', 'ES', 'Vitória', 'Estação', 'Herbert Alice', 113,'Santo Antônio', 29813185),
+        ('Kacie Rachel', 33472, 'qdickinson@paucek.com', 'diego.stanton', 'ES', 'Cariacica', 'Rua', 'Arvid Danny', 249,'Santo Antônio', 29873295),
+        ('Vincent Demetrius', 12503, 'shakira.gerlach@gmail.com', 'carole.kessler', 'ES', 'Vila Velha', 'Estação', 'Shea Eunice', 170,'Praia do Canto', 29765346),
+        ('Theo Marcelino', 30095, 'muller.destiney@gmail.com', 'davis.roman', 'ES', 'Itarana', 'Alameda', 'Brandy Glenna', 353,'Praia do Canto', 29067308),
+        ('Laron Hazel', 57049, 'estevan.schamberger@gmail.com', 'gottlieb.theresa', 'ES', 'Vitória', 'Rua', 'Kylee Beatrice', 174,'Jardim Camburi', 29062354),
+        ('Charity Olga', 26320, 'shayna.zulauf@yahoo.com', 'iframi', 'ES', 'Colatina', 'Distrito', 'Vincent Lexus', 894,'Jardim Camburi', 29176163),
+        ('Rylan Jay', 62489, 'alfonzo.nader@yahoo.com', 'halvorson.danyka', 'ES', 'Colatina', 'Rua', 'Carolyne Josiane', 906,'Goiabeiras', 29438786),
+        ('Daphney Alverta', 49501, 'willow.spinka@hotmail.com', 'hkeebler', 'ES', 'Vila Velha', 'Estação', 'Rosemary Dave', 602,'São Pedro', 29339513),
+        ('Ransom Deja', 51767, 'wlangworth@schumm.com', 'christine.koepp', 'ES', 'Colatina', 'Estação', 'Autumn Morgan', 506,'Jucutuquara', 29825664),
+        ('Makenna Ernest', 34237, 'anika45@hotmail.com', 'bruen.wade', 'ES', 'Vila Velha', 'Alameda', 'Mia Dane', 75,'Maruípe', 29248919),
+        ('Lisa Justina', 38911, 'jakubowski.heather@gmail.com', 'pdicki', 'ES', 'Vitória', 'Distrito', 'Eladio Malcolm', 103,'Jardim Camburi', 29825836),
+        ('Prince Amari', 13581, 'kiarra.strosin@west.com', 'maybell67', 'ES', 'Colatina', 'Avenida', 'Bo Arjun', 42,'Jucutuquara', 29489430),
+        ('Timmy Dahlia', 27062, 'ruthe39@schuppe.com', 'aleannon', 'ES', 'Vitória', 'Alameda', 'George Juston', 620,'Jardim da Penha', 29471330),
+        ('Tyreek Alejandrin', 30196, 'cristian87@bergstrom.com', 'litzy.collins', 'ES', 'Colatina', 'Rua', 'Melyssa Arielle', 143,'São Pedro', 29541754),
+        ('Hayley Dave', 64529, 'sam61@yahoo.com', 'bkutch', 'ES', 'Cariacica', 'Distrito', 'Zelma Stanton', 799,'Jardim Camburi', 29846820),
+        ('Lamar Brendan', 32905, 'colt45@yahoo.com', 'viola.heller', 'ES', 'Vila Velha', 'Distrito', 'Blair Daniella', 113,'Goiabeiras', 29234437),
+        ('Loraine Earnest', 38376, 'dhowe@ratke.biz', 'lerdman', 'ES', 'Cariacica', 'Rua', 'Yvonne Lilla', 124,'São Pedro', 29938117),
+        ('Stone Ardith', 17522, 'acrona@jaskolski.com', 'summer28', 'ES', 'Colatina', 'Estação', 'Weston Sandy', 391,'Goiabeiras', 29143386),
+        ('Price Tyshawn', 54557, 'elena.ortiz@gmail.com', 'cale52', 'ES', 'Itarana', 'Avenida', 'Brandy Gilbert', 317,'Jucutuquara', 29901886);
 
-        INSERT INTO TELEFONE(id_telefone, id_usuario, numero_telefone)
-        VALUES (1, 1, 985470122), 
-               (2, 2, 40028922), 
-               (3,3, 08007777000), 
-               (4,4,965441111), 
-               (5,5,987445632), 
-               (6,6,32180764), 
-               (7,7,20021001), 
-               (8,8, 30100259), 
-               (9,9, 782145215), 
-               (10,10, 54548181);
+        INSERT INTO TELEFONE(id_usuario, numero_telefone)
+        VALUES (1, 985470122),(2, 40028922),(3, 08007777000), 
+               (4,965441111), (5,987445632),(6,32180764), 
+               (7,20021001),(8, 30100259),(9, 782145215), 
+               (10, 54548181),(20, 987697938),(9, 966749190),
+               (46, 911006970),(39, 989162928),(49, 951790773),
+               (11, 908447176),(42, 996214473),(39, 944663369),
+               (28, 995753823),(3, 955704475),(39, 937673200),
+               (10, 962344688),(20, 974786886),(17, 923179687),
+               (8, 962899636),(10, 960502104),(13, 990713126),
+               (4, 978529076),(32, 996383707),(47, 968852085),
+               (42, 991704515),(20, 999703283),(27, 971254713),
+               (2, 944022538),(46, 914457578),(10, 929726273),
+               (3, 953120375),(47, 965688533),(21, 900592189),
+               (6, 918137070),(40, 982830443),(37, 991699749),
+               (36, 965287476),(41, 953786522),(26, 950283348),
+               (25, 990999453),(21, 943688543),(47, 924706862),
+               (30, 991653853),(48, 979615422),(1, 908061531),
+               (49, 982448829),(43, 943744115),(39, 993889939),
+               (2, 917994749),(31, 961673465),(45, 941216329),
+               (28, 967675758),(34, 957098046),(15, 910351169);
 
-        INSERT INTO COMPRA(id_compra, id_produto, id_usuario, data_compra, quantidade)
-        VALUES (1, 3, 1, '01-08-2020',1), 
-               (2, 4, 2, '01-08-2020', 4), 
-               (3, 6, 3, '01-08-2020',2), 
-               (4, 5, 4, '01-08-2020',1),
-               (5, 4, 5, '01-08-2020', 1), 
-               (6, 3, 6, '01-08-2020', 2),
-               (7, 4, 7, '08-28-2020', 1),
-               (8, 6, 8, '08-28-2020', 2),
-               (9, 1, 9, '08-28-2020' , 1),
-               (10, 2, 10, '08-28-2020', 2);
-
-
+        INSERT INTO COMPRA(id_produto, id_usuario, data_compra, quantidade)
+        VALUES (3, 1, '01-08-2020',1), (4, 2, '01-08-2020', 4),(6, 3, '01-08-2020',2),                
+               (5, 4, '01-08-2020',1),(4, 5, '01-08-2020', 1),(3, 6, '01-08-2020', 2),
+               (4, 7, '08-28-2020', 1),(6, 8, '08-28-2020', 2),(1, 9, '08-28-2020' , 1),
+               (2, 10, '08-28-2020', 2),(22, 35, '2010-06-10', 14),(30, 30, '2010-12-26', 5),
+               (23, 49, '2010-05-02', 8),(32, 48, '2011-04-06', 13),(50, 16, '2013-10-03', 13),
+               (48, 41, '2019-08-10', 5),(38, 34, '2016-11-02', 8),(32, 45, '2018-10-20', 14),
+               (48, 3, '2013-05-01', 14),(30, 45, '2012-02-11', 6),(17, 31, '2012-04-16', 10),
+               (30, 20, '2011-04-21', 15),(2, 5, '2014-11-09', 7),(12, 11, '2010-02-23', 14),
+               (23, 35, '2010-06-19', 8),(26, 24, '2015-12-03', 14),(48, 23, '2017-07-08', 6),
+               (47, 14, '2016-08-19', 9),(17, 7, '2014-12-17', 9),(6, 39, '2012-01-21', 14),
+               (22, 46, '2014-08-09', 13),(6, 44, '2013-12-18', 5),(41, 18, '2011-01-28', 14),
+               (16, 34, '2012-12-04', 14),(43, 2, '2011-06-09', 12),(10, 34, '2010-05-07', 13),
+               (37, 37, '2012-12-07', 2), (50, 3, '2017-01-23', 2),(15, 48, '2011-08-19', 4),
+               (23, 30, '2018-08-17', 3),(23, 17, '2010-01-21', 8),(15, 13, '2013-12-17', 13),
+               (22, 14, '2013-02-17', 2),(28, 47, '2011-12-02', 2),(9, 13, '2018-06-16', 1),
+               (12, 13, '2010-11-17', 10),(25, 33, '2018-06-07', 7),(33, 27, '2017-01-10', 1),              
+               (8, 48, '2010-12-05', 6),(34, 50, '2015-04-16', 5),(47, 35, '2013-05-23', 7),    
+               (49, 5, '2019-06-18', 7),(19, 37, '2017-02-26', 11),(45, 7, '2015-08-09', 9),
+               (3, 16, '2018-01-05', 9),(31, 44, '2017-07-19', 10),(19, 20, '2015-01-07', 4),
+               (24, 1, '2012-03-16', 4),(41, 29, '2011-11-02', 12),(5, 18, '2014-02-10', 9);
+               
+               
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
 
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
