@@ -577,6 +577,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
      from produto
      inner join compra
      on (produto.id_produto = compra.id_produto)
+     where produto.preco > 20
      group by produto.nome, produto.preco, compra.data_compra
 
      select usuario.nome, telefone.numero_telefone, usuario.email, usuario.cpf, count(usuario.municipio)
