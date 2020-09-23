@@ -695,7 +695,8 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
      
     1-- Mostra todos os atributos relativos aos produtos, retornando apenas os registros cujos precos são menores que o valor médio dos precos presentes na tabela produto
     
-    Select * From produto
+    Select * 
+    From produto
     Where produto.preco < (Select AVG(preco) From produto)
     group by preco
 
@@ -710,7 +711,8 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     
     3-- Mostra todos os atributos relativos aos produtos, retornando apenas os registros cujos precos estão entre 5 - 50 reais.
 
-    Select * From produto
+    Select * 
+    From produto
     Where preco > 5
     AND preco < 50
 
@@ -719,7 +721,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     Select nome, COUNT(compra.id_usuario) AS qnt_vezes
     From usuario
     Inner Join compra
-      On usuario.id_usuario = compra.id_usuario 
+    On usuario.id_usuario = compra.id_usuario 
     Group By nome
 
 
