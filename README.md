@@ -716,9 +716,11 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
     4-- mostra o nome do usuario e o número de vezes que comprou na loja
 
-    Select nome, COUNT(id_usuario) AS qnt_vezes
+    Select nome, COUNT(compra.id_usuario) AS qnt_vezes
     From usuario
-    GROUP BY nome
+    Inner Join compra
+      On usuario.id_usuario = compra.id_usuario 
+    Group By nome
 
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
