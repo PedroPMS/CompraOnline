@@ -729,7 +729,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 ### 10 RELATÓRIOS E GRÁFICOS
 
-!['Example Rig Presets'](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/Colab.pdf)
+![Relatórios e gráficos realizados no Google Colaboratory com suas respectivas instruções e resultados](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/Colab.pdf)
     
 
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
