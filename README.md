@@ -734,7 +734,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
 
-![Slides modelo Pecha Kucha](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/Apresenta%C3%A7%C3%A3o%20BD.pdf)
+![Slides modelo Pecha Kucha](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/Apresenta%C3%A7%C3%A3o%20BD.pdf)<br>
 ![Apresentação](https://www.youtube.com/watch?v=ZS3nWOTh5dI&)
 
 ># Marco de Entrega 03: Itens 10 e 11<br>
