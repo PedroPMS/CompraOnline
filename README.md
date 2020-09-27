@@ -729,10 +729,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 ### 10 RELATÓRIOS E GRÁFICOS
 
-#### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
-#### b) link com exemplo de relatórios será disponiblizado pelo professor no AVA
-#### OBS: Esta é uma atividade de grande relevância no contexto do trabalho. Mantenha o foco nos 5 principais relatórios/resultados visando obter o melhor resultado possível.
-
+!['Example Rig Presets'](https://github.com/PedroPMS/CompraOnline/blob/master/arquivos/Colab.pdf)
     
 
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
